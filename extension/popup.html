@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Remove X Slop</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="brand">
+        <img src="icons/icon-32.png" width="28" height="28" alt="" />
+        <div>
+          <h1>Remove X Slop</h1>
+          <p class="subtitle">Cleaner timeline, less junk</p>
+        </div>
+      </div>
+      <label class="switch" title="Master toggle">
+        <input type="checkbox" id="enabled" checked />
+        <span class="slider"></span>
+      </label>
+    </header>
+
+    <section class="stats" id="stats">
+      <div class="stat">
+        <span class="stat-value" id="hiddenCount">0</span>
+        <span class="stat-label">hidden (all time)</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="sessionHidden">—</span>
+        <span class="stat-label">this page</span>
+      </div>
+    </section>
+
+    <section class="filters" id="filters">
+      <h2>Filters</h2>
+
+      <label class="row">
+        <span>
+          <strong>Promoted / ads</strong>
+          <small>Paid posts and ad placements</small>
+        </span>
+        <input type="checkbox" id="hidePromoted" checked />
+      </label>
+
+      <label class="row">
+        <span>
+          <strong>Suggested for you</strong>
+          <small>Algorithmic posts you didn’t follow</small>
+        </span>
+        <input type="checkbox" id="hideSuggested" checked />
+      </label>
+
+      <label class="row">
+        <span>
+          <strong>Who to follow</strong>
+          <small>In-feed account recommendation modules</small>
+        </span>
+        <input type="checkbox" id="hideWhoToFollow" checked />
+      </label>
+
+      <label class="row">
+        <span>
+          <strong>Premium nags</strong>
+          <small>Subscribe / get verified upsells</small>
+        </span>
+        <input type="checkbox" id="hidePremiumNags" checked />
+      </label>
+
+      <label class="row">
+        <span>
+          <strong>Grok nags</strong>
+          <small>Try Grok / SuperGrok promo UI</small>
+        </span>
+        <input type="checkbox" id="hideGrokNags" checked />
+      </label>
+
+      <label class="row">
+        <span>
+          <strong>Trends in feed</strong>
+          <small>“What’s happening” modules in Home</small>
+        </span>
+        <input type="checkbox" id="hideTrendsInFeed" checked />
+      </label>
+
+      <label class="row">
+        <span>
+          <strong>Engagement bait</strong>
+          <small>Like-if-you-agree / RT-to-save patterns</small>
+        </span>
+        <input type="checkbox" id="hideEngagementBait" checked />
+      </label>
+    </section>
+
+    <section class="keywords">
+      <h2>Custom keywords</h2>
+      <p class="hint">Hide posts containing any of these (comma-separated).</p>
+      <textarea
+        id="customKeywords"
+        rows="3"
+        placeholder="e.g. giveaway, crypto airdrop, link in bio"
+      ></textarea>
+    </section>
+
+    <footer class="footer">
+      <button type="button" id="rescan" class="btn">Rescan page</button>
+      <span class="status" id="status"></span>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

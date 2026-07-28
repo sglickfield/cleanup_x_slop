@@ -1,0 +1,10 @@
+/* Hide marked slop; keep layout stable where possible */
+[data-rxs-hidden="1"] {
+  display: none !important;
+}
+
+/* Optional subtle fade when debugging — unused by default */
+[data-rxs-debug="1"] {
+  outline: 2px dashed #f91880 !important;
+  opacity: 0.35 !important;
+}
